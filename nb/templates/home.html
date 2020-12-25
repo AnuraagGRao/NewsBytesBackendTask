@@ -38,6 +38,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Count</th>
                             <th scope="col">Hashed URL</th>
+                            <th scope="col">Share URL</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,6 +47,7 @@
                             <th scope="row">{{ url.id }}</th>
                             <td>{{ url.clicks }}</td>
                             <td><a href="{{url_for('hshd', uniqueurl=url.hashed_url)}}">{{url.hashed_url}}</a></td>
+                            <td><a href="https://newsbytesbackendtask.herokuapp.com/hshd/{{url.hashed_url}}">https://newsbytesbackendtask.herokuapp.com/hshd/{{url.hashed_url}}</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

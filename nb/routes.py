@@ -47,8 +47,8 @@ def home():
         utmjson = {}
         for obj in utmparams:
             utmjson[obj[0]] = obj[1]
-        url = UrlData.query.filter_by(url=url).first()
-        if not url:
+        xurl = UrlData.query.filter_by(url=url).first()
+        if not xurl:
             hashed_url = uuid.uuid5(uuid.NAMESPACE_URL, url)
             newURL = UrlData(url = url, hashed_url = str(hashed_url))
             db.session.add(newURL)
