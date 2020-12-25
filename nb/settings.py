@@ -12,6 +12,6 @@ class Config():
     DEBUG = True
     TESTING = True
     CSRF_ENABLED = True
-    SECRET_KEY = os.getenv('SECRET_KEY')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    SECRET_KEY = "NewsBytesBackendTask"
+    SQLALCHEMY_DATABASE_URI = "sqlite:///temp.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False

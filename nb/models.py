@@ -5,7 +5,6 @@ from nb import db
 class LoginData(db.Model):
     
     id = db.Column(db.Integer, primary_key = True)
-    public_id = db.Column(db.String(40), unique = True)
     username = db.Column(db.String(20))
     hashed_password = db.Column(db.String())
 
