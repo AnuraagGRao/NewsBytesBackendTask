@@ -43,11 +43,10 @@ def home():
         if utmstartindex == 0:
             flash(f"No UTM found!, url => {url}", category="danger")
             return redirect(url_for("home"))
-        else:
-            utmparams = [obj.split("=") for obj in url[utmstartindex:].split("&")]
-            utmjson = {}
-            for obj in utmparams:
-                utmjson[obj[0]] = obj[1]
+        utmparams = [obj.split("=") for obj in url[utmstartindex:].split("&")]
+        utmjson = {}
+        for obj in utmparams:
+            utmjson[obj[0]] = obj[1]
         url = UrlData.query.filter_by(url=url).first()
         if not url:
             hashed_url = uuid.uuid5(uuid.NAMESPACE_URL, url)
